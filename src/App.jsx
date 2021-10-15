@@ -1,11 +1,12 @@
 import react from 'react'
+import Navbar from './pages/Navbar'
 
 import './App.css'
 
 function App() {
   return (
     <div className="App">
-     Just setting up right now --vite/react
+      <Navbar />
     </div>
   )
 }
