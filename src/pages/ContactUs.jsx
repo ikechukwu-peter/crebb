@@ -6,7 +6,7 @@ import styles from '../styles/header.module.css'
 import '../styles/form.css'
 
 
-function Login() {
+function ContactUs() {
     const activeStyle = { color: '#009688' };
     return (
         <div className={styles.banner}>
@@ -14,24 +14,22 @@ function Login() {
             <div className="form_head">
                 <div className="form_subhead">
                     <form className="main_form">
-                        <h2 className="intro_text"> Welcome, Login to continue... </h2>
+                        <h2 className="intro_text"> Hey!! Shoot 🔫 us email </h2>
+                        <label className="input_label" for="name">Name </label>
+                        <input className="_input" type="text" id="name" placeholder="Enter your name" />
                         <label className="input_label" for="email">Email </label>
                         <input className="_input" type="email" id="email" placeholder="Enter your email" />
-                        <label className="input_label" for="password">Password </label>
-                        <input className="_input" type="password" id="password" placeholder="Enter your password" />
+                        <label className="input_label" for="subject">Subject </label>
+                        <input className="_input" type="text" id="subject" placeholder="Enter email subject" />
+                   
+                        <textarea className="_input"  id="textarea" placeholder="Enter your message" />
                         <div className="btn-container">
 
                             <button className="btn" type="submit" >
                                 <span></span>
-                                Login
+                               Send
                             </button>
-                        </div>
-
-                        <p className="forgotten"> 
-                            <NavLink exact to="/forgot-password" activeStyle={activeStyle}> Forgot Password</NavLink>
-                        </p>
-                        <p className="forgotten">
-                            Don't have an account <NavLink exact to="/register" activeStyle={activeStyle}>Sign Up</NavLink>                        </p>
+                        </div>                      
                     </form>
 
                 </div>
@@ -43,4 +41,4 @@ function Login() {
 
 }
 
-export default Login
+export default ContactUs
