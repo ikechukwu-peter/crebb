@@ -1,17 +1,59 @@
 import React from 'react'
-import  '../styles/navbar.css';
+import { NavLink } from "react-router-dom";
+import '../styles/navbar.css';
 
 function Navbar() {
+    const activeStyle = {color: '#009688' };  
+ 
     return (
-             <div className="navbar">
-            <strong className="logo">Crebb</strong>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Book a session</a></li>
-                <li><a href="#">Sign Up</a></li>
-                <li><a href="#">Login</a></li>
-            </ul>       
-         </div>           
+        // Authenticated Link
+        // <div className="navbar">
+        //     <strong className="logo">Crebb</strong>
+        //     <ul>
+        //         <li>  
+        //              <NavLink exact to="/" activeStyle={activeStyle}>Home</NavLink>
+        //            
+        //         </li>
+        //          <li>
+        //          <NavLink exact to="/contact-us" activeStyle={activeStyle}>Contact Us</NavLink>
+        //                             
+        //          </li>
+        //          <li>
+        //          <NavLink exact to="/see-all-session" activeStyle={activeStyle}>See Your Sessions</NavLink>
+        //                             
+        //          </li>
+        //         <li>
+        //         <NavLink exact to="/book-a-session" activeStyle={activeStyle}>Book A Session</NavLink>
+        //            
+        //         </li>
+        //         <li>   <NavLink exact to="/login" activeStyle={activeStyle}>Log Out</NavLink>
+        //            
+        //         </li>
+        //      </ul>
+        // </div>
+
+        //Guest Link
+
+        <div className="navbar">
+        <strong className="logo">Crebb</strong>
+        <ul>
+            <li>  
+                 <NavLink exact to="/" activeStyle={activeStyle}>Home</NavLink>
+               
+            </li>
+            <li>
+            <NavLink exact to="/contact-us" activeStyle={activeStyle}>Contact Us</NavLink>
+                                
+            </li>            
+            <li>   <NavLink exact to="/login" activeStyle={activeStyle}>Login</NavLink>
+               
+            </li>
+            <li>
+            <NavLink exact to="/register" activeStyle={activeStyle}>Sign Up</NavLink>
+                                
+            </li>
+        </ul>
+    </div>
     )
 }
 
