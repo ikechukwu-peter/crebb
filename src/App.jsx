@@ -10,7 +10,6 @@ import './App.css'
 
 function App() {
   return (
-  <div className="App">
     <Router>   
         <Switch>
           <Route exact path="/"   component={Home} />   
@@ -23,7 +22,6 @@ function App() {
         </Switch>
       
     </Router>
-    </div>
 
   )
 }
