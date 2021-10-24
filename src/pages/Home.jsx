@@ -1,12 +1,12 @@
 import React from 'react'
 import Navbar  from './Navbar';
 import Footer from './Footer';
-import styles from '../styles/header.module.css'
+
 import  '../styles/home.css';
 
 function Home() {
    return (
-        <div className={styles.banner}>
+        <div>
             <Navbar />
                <div className="content">
                <h1>BOOK A SESSION</h1>

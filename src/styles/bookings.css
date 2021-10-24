@@ -1,0 +1,38 @@
+.card {
+    display: flex;
+     justify-content: center;
+     flex-direction: column;
+     width: 80%;
+    height: 100%;
+    margin: 0 auto;
+   }
+.booking-head {
+    text-align: center;
+    color: #fff;
+    font-size: 6rem;
+}
+
+.card-body {
+   padding: 0 10px;
+    border: 1px solid red;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+   
+}
+
+.action-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    width: 10%;   
+}
+
+.booking-title {
+    color: #fff;
+    font-size: 3rem;
+}
+.cancel-booking, .delete-booking {
+    color: #fff;
+    padding: 0 2rem;
+}

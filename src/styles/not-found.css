@@ -1,0 +1,47 @@
+.not-found{
+    display: flex;
+align-items: center;
+justify-content: center;
+flex-direction: column;
+ width: 80%;
+height: 80vh;
+margin: 0 auto;
+}
+
+.error-name {
+    display: block;
+    color: #fff;
+    font-size: 20rem;
+}
+
+
+.error-text {
+      color: #fff;
+      font-size: 2rem;
+      margin:  0 30rem;
+}
+
+.back-link {
+    color: #fff;
+    font-size: 1.5rem;
+
+}
+
+@media screen and  (max-width: 600px) {
+    .error-name {
+        display: block;
+        color: #fff;
+        font-size: 10rem;
+    }   
+    
+    .error-text {
+          color: #fff;
+          font-size: 1.1rem;
+          margin:  0 4rem;
+    }
+    .back-link {
+        color: #fff;
+        font-size: 1.1rem;
+    }
+    
+}

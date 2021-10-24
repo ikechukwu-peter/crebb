@@ -2,14 +2,13 @@ import React from 'react';
 import { NavLink } from "react-router-dom";
 import Navbar from './Navbar';
 import Footer from './Footer';
-import styles from '../styles/header.module.css'
 import '../styles/form.css'
 
 
 function SignUp() {
     const activeStyle = {color: '#009688' };  
     return (
-        <div className={styles.banner}>
+        <div>
             <Navbar />
             <div className="form_head">
                 <div className="form_subhead">
@@ -20,11 +19,9 @@ function SignUp() {
                         <label className="input_label" for="password">Password </label>
                         <input className="_input" type="password" id="password" placeholder="Enter your password" />
                         <div className="btn-container">
-                            <button className="btn" type="submit">
-                            Sign Up
-                            <span></span>
-                      
-                        </button>
+                        <button className="btn" type="submit" >
+                              Login
+                            </button>
                         </div>
 
                         <p className="forgotten">Already has an account?                           

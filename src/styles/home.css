@@ -1,3 +1,4 @@
+
 .content {
     width: 100%;
     position: absolute;
@@ -8,19 +9,21 @@
 }
 
 .content h1 {
-    font-size: 2rem;
+    font-size: 5rem;
     margin-top: 1rem;
 }
 
 .content p {
-    margin: 0.1rem 3rem;
-    font-weight: 20;
-    line-height: 1.2rem;
+    margin: 0 20rem;
+    padding: 0.4rem;
+    font-weight: bold;
+    line-height: 2.2rem;
+    font-size: large;
 }
 
 .cta {
     width: 12rem;
-    padding: 0.5rem 0;
+    padding: 0.1rem 0;
     text-align: center;
     color: #fff;
     margin: 4rem 1rem;
@@ -54,39 +57,23 @@
   border: none;
 }
 
-@media only screen and (min-width: 600px) {
-  
-  }
+@media screen and (max-width: 600px) {
+     .content h1 {
+        font-size: 3rem;
+       
+    }  
+    .content p {
+        margin: 0 2rem;
+        padding: 0.4rem;
+        font-weight: lighter;
+        line-height: 2.3rem;
+        font-size: 1.4rem;
+        margin-bottom: 4rem;
+    }
 
-  @media screen and (min-width: 1200px) {
-      
-.content {
-    width: 100%;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    text-align: center;
-    color: #fff;
-}
-
-.content h1 {
-    font-size: 70px;
-    margin-top: 80px;
-}
-
-.content p {
-    margin: 20px auto;
-    font-weight: 100;
-    line-height: 25px;
-}
-
+    
 .cta {
-    width: 200px;
-    padding: 0;
-    text-align: center;
-    color: #fff;
-    margin: 20px 10px;
-    border-radius: 25px;
- }
-      
-  }
+      margin: 4rem 8rem;
+     
+}
+}
