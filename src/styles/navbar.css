@@ -47,3 +47,29 @@
 .navbar ul li:hover::after {
    width: 100%;
 }
+
+/* codesmiles edit */
+.mobile{
+    display: flex;
+    justify-content: space-between;
+}
+.img{
+    display: none;
+}
+@media screen and (max-width:700px) {
+
+    .navbar{
+        display: block;
+    }
+    .navbar ul{
+        /* display: none; */
+        justify-content: center;
+
+    }
+
+    .img{
+        display: block;
+        height: 2em;
+    }
+    
+}
