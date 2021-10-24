@@ -1,3 +1,4 @@
+
 .content {
     width: 100%;
     position: absolute;
@@ -54,4 +55,25 @@
 
 .cta:hover {
   border: none;
+}
+
+@media screen and (max-width: 600px) {
+     .content h1 {
+        font-size: 3rem;
+       
+    }  
+    .content p {
+        margin: 0 2rem;
+        padding: 0.4rem;
+        font-weight: lighter;
+        line-height: 2.3rem;
+        font-size: 1.4rem;
+        margin-bottom: 4rem;
+    }
+
+    
+.cta {
+      margin: 4rem 8rem;
+     
+}
 }
