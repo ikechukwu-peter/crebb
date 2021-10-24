@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import Login from './pages/Login';
 import SignUp from './pages/SignUp';
 import ContactUs from './pages/ContactUs';
+import NotFound from './pages/NotFound'
 
 
 import './App.css'
@@ -18,7 +19,7 @@ function App() {
           
           <Route exact path="/register"  component={SignUp}  />    
           <Route exact path="/contact-us"  component={ContactUs}  />      
-          
+          <Route  component={NotFound}  />  
         </Switch>
       
     </Router>
