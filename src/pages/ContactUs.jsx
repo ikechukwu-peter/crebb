@@ -8,7 +8,7 @@ import '../styles/form.css'
 function ContactUs() {
     const activeStyle = { color: '#009688' };
     return (
-        <div>
+        <div className="form-container">
             <Navbar />
             <div className="form_head">
                 <div className="form_subhead">

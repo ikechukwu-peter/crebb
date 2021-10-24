@@ -1,8 +1,9 @@
+
 .form_head {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 80%;
+     width: 80%;
     height: 80vh;
     margin: 0 auto;
    }
@@ -90,4 +91,42 @@ textarea#textarea{
     background: none;
     margin-top: 2rem;
     resize: none;
+}
+
+
+@media screen and (max-width: 600px) {
+    .form_head {
+          width: 80%;
+        height: 80vh;
+         }
+       .form_subhead {
+        margin: 0;
+ }
+ .main_form input{
+    height: 3rem;
+    border: 2px solid #009688;
+    box-sizing: border-box;
+     margin-top: 0;
+    margin-bottom: 0.1rem;
+}
+
+
+.btn:hover{
+    border: none;
+    background:  #009688;
+}
+
+.btn-container {
+    text-align: center;
+    padding: 1rem 0;
+   
+}
+textarea#textarea{
+	height: 10vh;
+	padding: 2rem 2rem;
+    background: none;
+    margin-top: 2rem;
+    resize: none;
+}
+    
 }
