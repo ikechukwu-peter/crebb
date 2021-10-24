@@ -25,8 +25,7 @@ function ContactUs() {
                         <div className="btn-container">
 
                             <button className="btn" type="submit" >
-                                <span></span>
-                               Send
+                                        Send
                             </button>
                         </div>                      
                     </form>

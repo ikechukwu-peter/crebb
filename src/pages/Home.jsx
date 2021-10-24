@@ -6,7 +6,7 @@ import  '../styles/home.css';
 
 function Home() {
    return (
-        <div className="trial">
+        <div>
             <Navbar />
                <div className="content">
                <h1>BOOK A SESSION</h1>
