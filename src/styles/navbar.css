@@ -46,9 +46,8 @@
     display: none;
 }
 
-@media screen and (max-width: 700px){
-  
-    .menu-bar {
+@media screen and (max-width: 600px){
+     .menu-bar {
         display: flex;
         color: #fff;
         display: block;
@@ -69,6 +68,18 @@
         flex-direction: column;
 
     }
+    .navbar {
+        width: 100% ;
+        margin: auto;
+         padding-top: 2rem;
+        display: flex;
+        align-items:flex-start;
+        justify-content: space-between;
+        position: relative;
+    }
+    .logo {
+        margin-left: 3rem;
+    }
     .nav-links {
         display: none;
     }
@@ -83,8 +94,14 @@
         margin-top: 3rem;
         background: black;
         height: 100vh;
+         
          }
-    .navbar ul li {
-          padding: 0rem;   
     }
-  }
+
+    
+@media screen and (max-width: 300px){
+    .logo {
+        width: 5rem;
+    }
+  
+    }
