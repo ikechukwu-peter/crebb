@@ -14,13 +14,16 @@
 
 .card-body {
    padding: 0 10px;
-    border: 1px solid red;
     display: flex;
     justify-content: space-between;
     align-items: center;
    
 }
-
+.card-body:hover {
+    background:linear-gradient(rgba(0, 0, 0, 0.2), 
+   rgba(0, 0, 0, 0.2));
+ }
+ 
 .action-container {
     display: flex;
     justify-content: center;
@@ -31,8 +34,45 @@
 .booking-title {
     color: #fff;
     font-size: 3rem;
+    cursor: pointer;
 }
+
 .cancel-booking, .delete-booking {
     color: #fff;
     padding: 0 2rem;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 600px) {
+    .card {
+        width: 95%;
+      }
+       .booking-head {
+       font-size: 4rem;
+    }
+    
+    .card-body {
+       padding: 0 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+       
+    }
+.action-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    width: 20%;   
+}
+
+.booking-title {
+    font-size: 1.5rem;
+
+}
+
+.cancel-booking, .delete-booking {
+    padding: 0 0.8rem;
+ 
+}
 }
