@@ -1,10 +1,11 @@
 import React from 'react'
-import {FaEnvelope, FaRegTimesCircle, FaTrashAlt} from 'react-icons/fa'
+import {FaRegTimesCircle, FaTrashAlt} from 'react-icons/fa'
 import Navbar from './Navbar';
 import Footer from './Footer';
 import '../styles/bookings.css';
 
 function Bookings() {
+
     return (
         <div>
             <Navbar />
