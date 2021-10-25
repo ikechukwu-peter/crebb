@@ -43,7 +43,7 @@ function ContactUs() {
                             value={name}
                             onChange={(e) => setName(e.target.value)}
                             required
-                            autoFocus />
+                          />
                         <label className="input_label" htmlFor="email">Email </label>
                         <input className="_input" type="email" id="email" placeholder="Enter your email"
                             value={email}

@@ -48,7 +48,7 @@ function Login() {
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
                             required
-                            autoFocus
+                         
                         />
                         <label className="input_label" htmlFor="password">Password </label>
                         <input className="_input" type="password" id="password" placeholder="Enter your password"

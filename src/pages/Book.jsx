@@ -47,7 +47,7 @@ function Book() {
                             value={title}
                             onChange={(e) => setTitle(e.target.value)}
                             required
-                            autoFocus />
+                           />
                         <label className="input_label" htmlFor="date">Date and Time</label>
                         <input className="_input" type="datetime-local" id="date" name="date"
                             value={datetime}
