@@ -1,11 +1,11 @@
-
 .navbar {
     width: 85% ;
     margin: auto;
-    padding: 35px 0;
+     padding-top: 2rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: relative;
 }
 
 .logo {
@@ -17,14 +17,8 @@
 .navbar ul li {
     list-style: none;
     display: inline-block;
-    margin: 0 20px;
+    margin: 0 10px;
     position: relative;
-}
-
-.navbar ul li {
-    list-style: none;
-    display: inline-block;
-    margin: 0 20px;
 }
 
 .navbar ul li a {
@@ -48,28 +42,71 @@
    width: 100%;
 }
 
-/* codesmiles edit */
-.mobile{
-    display: flex;
-    justify-content: space-between;
-}
-.img{
+.menu-bar {
     display: none;
 }
-@media screen and (max-width:700px) {
 
-    .navbar{
+@media screen and (max-width: 600px){
+     .menu-bar {
+        display: flex;
+        color: #fff;
         display: block;
-    }
-    .navbar ul{
-        /* display: none; */
-        justify-content: center;
-
-    }
-
-    .img{
-        display: block;
-        height: 2em;
-    }
+        position: absolute;
+        top: 1.8rem;
+        right: 2.2rem;
+        z-index: 1;
+        user-select: none;
+        appearance: none;
+        outline: none;
+        border: none;
+        background: none;
+        cursor: pointer;
+        font-size: 2rem;  
+        z-index: 9999;
     
-}
+    }
+    .navbar {
+        align-items: flex-start;
+        flex-direction: column;
+
+    }
+    .navbar {
+        width: 100% ;
+        margin: auto;
+         padding-top: 2rem;
+        display: flex;
+        align-items:flex-start;
+        justify-content: space-between;
+        position: relative;
+     
+    }
+    .logo {
+        margin-left: 3rem;
+    }
+    .nav-links {
+        display: none;
+    }
+        .open {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        position: absolute;
+        z-index: 999;
+        justify-content: space-evenly;
+        margin-top: -3rem;
+        background: black;
+        opacity: 0.98;
+        height: 100vh;
+        overflow: hidden;
+             
+         }
+    }
+
+    
+@media screen and (max-width: 300px){
+    .logo {
+        width: 5rem;
+    }
+  
+    }
