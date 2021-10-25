@@ -14,11 +14,10 @@
 }
 
 .content p {
-    margin: 0 20rem;
+    margin: 0 40rem;
     padding: 0.4rem;
     font-weight: bold;
-    line-height: 2.2rem;
-    font-size: large;
+    font-size: 2rem;
 }
 
 .cta {
@@ -66,14 +65,12 @@
         margin: 0 2rem;
         padding: 0.4rem;
         font-weight: lighter;
-        line-height: 2.3rem;
-        font-size: 1.4rem;
+        font-size: 2rem;
         margin-bottom: 4rem;
     }
 
     
 .cta {
-      margin: 4rem 8rem;
-     
+      margin: 4rem 8rem;     
 }
 }

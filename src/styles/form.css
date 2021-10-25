@@ -47,6 +47,9 @@
     font-size: 2rem;
 }
 
+.level-intro-text {
+    margin-top: 4rem;
+}
 .input_label {
     margin: 0 1rem;
     font-size: 1.5rem;
