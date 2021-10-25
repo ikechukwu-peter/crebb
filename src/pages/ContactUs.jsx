@@ -30,7 +30,7 @@ function ContactUs() {
             <div className="form_head">
                 <div className="form_subhead">
                     <form className="main_form" onSubmit={handleMessage}>
-                        <h2 className="intro_text"> Hey!! Shoot 🔫 us an email </h2>
+                        <h2 className="intro_text level-intro-text"> Hey!! Shoot 🔫 us an email </h2>
                         {error ? (
                             <div
                                 className={styles.error}

@@ -96,9 +96,10 @@
         justify-content: space-evenly;
         margin-top: -3rem;
         background: black;
+        opacity: 0.98;
         height: 100vh;
         overflow: hidden;
-         
+             
          }
     }
 
