@@ -1,0 +1,78 @@
+.card {
+    display: flex;
+     justify-content: center;
+     flex-direction: column;
+     width: 80%;
+    height: 100%;
+    margin: 0 auto;
+   }
+.booking-head {
+    text-align: center;
+    color: #fff;
+    font-size: 6rem;
+}
+
+.card-body {
+   padding: 0 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+   
+}
+.card-body:hover {
+    background:linear-gradient(rgba(0, 0, 0, 0.2), 
+   rgba(0, 0, 0, 0.2));
+ }
+ 
+.action-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    width: 10%;   
+}
+
+.booking-title {
+    color: #fff;
+    font-size: 3rem;
+    cursor: pointer;
+}
+
+.cancel-booking, .delete-booking {
+    color: #fff;
+    padding: 0 2rem;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 600px) {
+    .card {
+        width: 95%;
+      }
+       .booking-head {
+       font-size: 4rem;
+    }
+    
+    .card-body {
+       padding: 0 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+       
+    }
+.action-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    width: 20%;   
+}
+
+.booking-title {
+    font-size: 1.5rem;
+
+}
+
+.cancel-booking, .delete-booking {
+    padding: 0 0.8rem;
+ 
+}
+}
