@@ -25,6 +25,25 @@
 
 }
 
+.fblogin {
+    width: 100%;
+    border: 2px solid #009688;
+    box-sizing: border-box;
+    background: transparent;
+    color: #fff;
+    margin-top: 6px;
+}
+
+.fblogin:hover {
+    color: #fff;
+    background: #009688;
+    border: none;
+}
+.fb-icon {
+      margin-right: 1rem;
+   }
+
+
 .main_form input:focus, .main_form textarea:focus{
     color: #fff;
 }
@@ -59,15 +78,19 @@
 
 .btn {
     color: #fff;
-    margin: 0 1rem;
+    width:100%;
     border: 2px solid #009688;
   }
 
 .btn:hover{
+    color: #fff;
     border: none;
     background:  #009688;
 }
-
+.btn:focus{ 
+    color: #fff;
+    border: 2px solid #009688;
+}
 .btn-container {
     text-align: center;
     padding: 2rem 0;
@@ -84,6 +107,9 @@
 
 .forgotten a {
     text-decoration: none;
+    color: #009688;
+    font-size: 1.2rem;
+    font-weight: bold;
 }
 
 textarea#textarea{

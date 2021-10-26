@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
+import FacebookLogin from 'react-facebook-login';
 import { NavLink } from "react-router-dom";
+import { FaFacebook } from 'react-icons/fa';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import styles from '../styles/style.module.css'
@@ -13,18 +15,21 @@ function Login() {
 
     const handleLogin = async (e) => {
         e.preventDefault();
-        if(email && password.length >= 6){
-              const user = {
+        if (email && password.length >= 6) {
+            const user = {
                 email, password
             }
             console.table(user)
             setEmail("")
             setPassword("")
-         
+
         }
-     
-    //   setError('Minimum length of password is six (6)')
-        
+
+        //   setError('Minimum length of password is six (6)')
+
+    }
+    const responseFacebook = (response) => {
+        console.log(response.email);
     }
 
     const activeStyle = { color: '#009688' };
@@ -48,7 +53,7 @@ function Login() {
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
                             required
-                         
+
                         />
                         <label className="input_label" htmlFor="password">Password </label>
                         <input className="_input" type="password" id="password" placeholder="Enter your password"
@@ -61,7 +66,21 @@ function Login() {
                                 Login
                             </button>
                         </div>
+                        <div style={{ textAlign: 'center', color: '#fff' }}>
+                            <strong>
+                                Or
+                            </strong>
+                        </div>
 
+                        <FacebookLogin
+                            appId="3774838975977263"
+                            autoLoad={true}
+                            fields="name,email"
+                            callback={responseFacebook}
+                            cssClass="_input fblogin"
+                            icon={<FaFacebook className="fb-icon" />}
+                            textButton="&nbsp;&nbsp;Sign In with Facebook"
+                        />
                         <p className="forgotten">
                             <NavLink exact to="/forgot-password" activeStyle={activeStyle}> Forgot Password</NavLink>
                         </p>

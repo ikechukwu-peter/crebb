@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
+import FacebookLogin from 'react-facebook-login';
 import { NavLink } from "react-router-dom";
+import { FaFacebook } from 'react-icons/fa'
 import Navbar from './Navbar';
 import Footer from './Footer';
 import styles from '../styles/style.module.css'
@@ -19,6 +21,11 @@ function SignUp() {
         }
         console.table(newUser)
     }
+
+    const responseFacebook = (response) => {
+        console.log(response);
+    }
+
 
     const activeStyle = { color: '#009688' };
     return (
@@ -40,19 +47,33 @@ function SignUp() {
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
                             required
-                            />
+                        />
 
-                        <label className="input_label" htmlFor="password">Password </label>
-                        <input className="_input" type="password" id="password" placeholder="Enter your password" />
                         <div className="btn-container">
                             <button className="btn" type="submit" >
                                 Sign Up
                             </button>
                         </div>
+                        <div style={{textAlign: 'center', color: '#fff'}}>
+                        <strong>
+                            Or
+                        </strong>
+                        </div>
+                      
 
+                        <FacebookLogin
+                            appId="3774838975977263"
+                            autoLoad={true}
+                            fields="name,email"
+                            callback={responseFacebook}
+                            cssClass="_input fblogin"
+                            icon={<FaFacebook className="fb-icon" />}
+                            textButton="&nbsp;&nbsp;Sign Up with Facebook"
+                        />
                         <p className="forgotten">Already has an account?
                             <NavLink exact to="/login" activeStyle={activeStyle}> Login</NavLink>
                         </p>
+
                     </form>
 
                 </div>
