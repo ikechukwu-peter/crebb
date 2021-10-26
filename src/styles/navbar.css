@@ -9,10 +9,9 @@
 }
 
 .logo {
-    width: 120px;
+    width: 40%;
     cursor: pointer;
-    color: #fff;
-    text-transform: uppercase;
+    margin-top: -1.8rem;
 }
 .navbar ul li {
     list-style: none;
@@ -47,6 +46,10 @@
 }
 
 @media screen and (max-width: 600px){
+    .logo {
+        width: 30%;
+    }
+  
      .menu-bar {
         display: flex;
         color: #fff;

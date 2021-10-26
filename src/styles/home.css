@@ -14,7 +14,7 @@
 }
 
 .content p {
-    margin: 0 40rem;
+    margin: 0 20rem;
     padding: 0.4rem;
     font-weight: bold;
     font-size: 2rem;
@@ -54,6 +54,12 @@
 
 .cta:hover {
   border: none;
+}
+
+@media screen and (max-width: 800px) {
+    .content p {
+        margin: 0 12rem;
+    }
 }
 
 @media screen and (max-width: 600px) {
