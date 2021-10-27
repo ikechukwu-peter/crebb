@@ -66,7 +66,7 @@
         cursor: pointer;
         font-size: 2rem;  
         z-index: 9999;
-    
+         
     }
     .navbar {
         align-items: flex-start;
@@ -87,7 +87,7 @@
         margin-left: 3rem;
     }
     .nav-links {
-        display: none;
+        display: none;  
     }
         .open {
         display: flex;
@@ -102,6 +102,7 @@
         opacity: 0.98;
         height: 100vh;
         overflow: hidden;
+        animation: fadeIn 500ms;
              
          }
     }
@@ -112,4 +113,9 @@
         width: 5rem;
     }
   
+    }
+
+    @keyframes fadeIn {
+        from {opacity: 0;}
+        to {opacity: 1;}
     }
