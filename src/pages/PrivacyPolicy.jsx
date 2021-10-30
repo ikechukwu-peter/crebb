@@ -1,17 +1,16 @@
 import React from 'react'
 import Navbar from './Navbar';
 import Footer from './Footer';
-
-import '../styles/home.css';
+import '../styles/privacy-policy.css';
 
 function PrivacyPolicy() {
     return (
         <div>
             <Navbar />
-            <div className="content">
+            <div className="container">
                 <h1>Privacy Policy</h1>
                 <div>
-                <p>
+                <p className="privacy-text">
                     This privacy policy ("policy") will help you understand how Crebb ("us", "we", "our") uses and
                     protects the data you provide to us when you visit and use [website] ("website", "service").
                     We reserve the right to change this policy at any given time, of which you will be promptly

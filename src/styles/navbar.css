@@ -9,7 +9,7 @@
 }
 
 .logo {
-    width: 40%;
+    width: 20%;
     cursor: pointer;
     margin-top: -1.8rem;
 }
@@ -47,7 +47,8 @@
 
 @media screen and (max-width: 600px){
     .logo {
-        width: 30%;
+        width: 20%;
+        margin-left: 3rem;
     }
   
      .menu-bar {
@@ -83,9 +84,7 @@
         position: relative;
      
     }
-    .logo {
-        margin-left: 3rem;
-    }
+  
     .nav-links {
         display: none;  
     }
