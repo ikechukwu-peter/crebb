@@ -58,14 +58,13 @@
         position: absolute;
         top: 1.8rem;
         right: 2.2rem;
-        z-index: 1;
         user-select: none;
         appearance: none;
         outline: none;
         border: none;
         background: none;
         cursor: pointer;
-        font-size: 2rem;  
+        font-size: 1.3rem;  
         z-index: 9999;
          
     }

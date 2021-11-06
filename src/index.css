@@ -17,6 +17,7 @@ html,body {
   background-position: center;
   background-size: cover;
   box-sizing: border-box;
-  overflow: hidden;
+  overflow-x: hidden;
+  font-size: 16px;
   }
 

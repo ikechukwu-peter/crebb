@@ -41,9 +41,13 @@
     color: #fff;
     padding: 0 2rem;
     cursor: pointer;
-   
+    border: none;
 }
-
+.no-booking {
+    text-align: center;
+    color: yellow;
+    font-size: 3rem;
+}
 
 @media screen and (max-width: 600px) {
     .card {
@@ -76,5 +80,9 @@
 .cancel-booking, .delete-booking {
     padding: 0 0.8rem;
  
+}
+.no-booking{
+    text-align: center;
+    font-size: 2rem;
 }
 }
