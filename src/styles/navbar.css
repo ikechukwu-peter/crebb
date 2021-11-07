@@ -9,7 +9,7 @@
 }
 
 .logo {
-    width: 40%;
+    width: 20%;
     cursor: pointer;
     margin-top: -1.8rem;
 }
@@ -47,7 +47,8 @@
 
 @media screen and (max-width: 600px){
     .logo {
-        width: 30%;
+        width: 20%;
+        margin-left: 3rem;
     }
   
      .menu-bar {
@@ -57,16 +58,15 @@
         position: absolute;
         top: 1.8rem;
         right: 2.2rem;
-        z-index: 1;
         user-select: none;
         appearance: none;
         outline: none;
         border: none;
         background: none;
         cursor: pointer;
-        font-size: 2rem;  
+        font-size: 1.3rem;  
         z-index: 9999;
-    
+         
     }
     .navbar {
         align-items: flex-start;
@@ -83,11 +83,9 @@
         position: relative;
      
     }
-    .logo {
-        margin-left: 3rem;
-    }
+  
     .nav-links {
-        display: none;
+        display: none;  
     }
         .open {
         display: flex;
@@ -102,6 +100,7 @@
         opacity: 0.98;
         height: 100vh;
         overflow: hidden;
+        animation: fadeIn 500ms;
              
          }
     }
@@ -112,4 +111,9 @@
         width: 5rem;
     }
   
+    }
+
+    @keyframes fadeIn {
+        from {opacity: 0;}
+        to {opacity: 1;}
     }

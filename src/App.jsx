@@ -6,6 +6,8 @@ import SignUp from './pages/SignUp';
 import ContactUs from './pages/ContactUs';
 import Book from './pages/Book';
 import Bookings from './pages/Bookings';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import TermsandConditions from './pages/TermsandConditions';
 import NotFound from './pages/NotFound'
 
 function App() {
@@ -18,6 +20,8 @@ function App() {
         <Route exact path="/contact-us" component={ContactUs} />
         <Route exact path="/book-a-session" component={Book} />
         <Route exact path="/see-all-sessions" component={Bookings} />
+        <Route exact path="/privacy-policy" component={PrivacyPolicy} />
+        <Route exact path="/terms-conditions" component={TermsandConditions} />
         <Route component={NotFound} />
       </Switch>
 
