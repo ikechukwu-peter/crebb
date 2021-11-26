@@ -1,19 +1,26 @@
 import React from 'react'
-import { FaRegTimesCircle, FaTrashAlt } from 'react-icons/fa';
+import {FaRegTimesCircle, FaTrashAlt } from 'react-icons/fa';
 import Modal from './Modal';
 import Spinner from '../common/Spinner'
+import styles from '../styles/style.module.css'
 import '../styles/bookings.css';
 
 function BookingsForm({handleCancel, handleDelete, hideModal, 
-    showModal, show, setShow, items, sessionData, error, isLoading, 
-    setSessionData}) {
+    showModal, show,  items, sessionData, error, isLoading}) {
     return (
         <>
         <h1 className="booking-head">Bookings</h1>
             {isLoading ? <Spinner /> :
                 <div className="card">
+                     {error ? (
+                        <div
+                            className={styles.error}
+                        >
+                            {error}
+                        </div>
+                    ) : null}
                     {
-                        sessionData.length > 0 ? sessionData.map(session => {
+                        sessionData.results.length > 0 ? sessionData.data.doc.map(session => {
                             return <div className="card-body" key={session._id}>
                                 < Modal show={show} handleClose={hideModal} session={items} />
                                 <h2 className="booking-title" onClick={() => showModal(session)}>{session.title}</h2>

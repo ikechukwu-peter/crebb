@@ -36,9 +36,9 @@ function SignupForm({ email, setEmail, username, setUsername, mutation, handleSi
                         />
 
                         <div className="btn-container">
-                            <button className="btn" type="submit" >
-                                Sign Up
-                            </button>
+                        <button className="btn" type="submit" >
+                            {mutation.isLoading ? 'Loading...' : 'Sign Up'}
+                        </button>
                         </div>
                         <div style={{ textAlign: 'center', color: '#fff' }}>
                             <strong>

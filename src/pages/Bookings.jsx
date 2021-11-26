@@ -3,18 +3,14 @@ import { useQuery } from 'react-query'
 import BookingsForm from '../components/bookingsForm';
 import Navbar from './Navbar';
 import Footer from './Footer';
-import useStore from '../store';
-import {bookings} from '../servers/bookings'
+import { bookings } from '../servers/bookings'
 
 
 function Bookings() {
-    const isAuthenticated = useStore(state => state.isAuthenticated)
     const [show, setShow] = useState(false);
     const [items, setItems] = useState(null)
-    const [sessionData, setSessionData] = useState([])
-     const {data, error, isLoading} = useQuery('session', bookings)
-     setSessionData(data)
-     console.log(data)
+    const { data, error, isLoading } = useQuery('session', bookings);
+
     const showModal = (value) => {
         setItems(value);
         setShow(true)
@@ -55,8 +51,7 @@ function Bookings() {
                 show={show}
                 setShow={setShow}
                 items={items}
-                sessionData={sessionData}
-                setSessionData={setSessionData}
+                sessionData={data}
                 isLoading={isLoading}
                 error={error} />
             <Footer />
