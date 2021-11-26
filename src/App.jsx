@@ -1,4 +1,5 @@
 import react from 'react';
+import jwt_decode from 'jwt-decode'
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { QueryClientProvider, QueryClient } from 'react-query';
 import Home from './pages/Home';
@@ -12,10 +13,35 @@ import TermsandConditions from './pages/TermsandConditions';
 import NotFound from './pages/NotFound'
 import ProtectedRoutes from './utilities/ProtectedRoutes';
 import useStore from './store';
+import setAuthToken from './utilities/SetAuthToken';
+
 const queryClient = new QueryClient();
 
 function App() {
   const isAuthenticated = useStore(state => state.isAuthenticated)
+  const loginAuth = useStore(state => state.login);
+  const logoutAuth = useStore(state => state.logout);
+
+  if(localStorage.getItem('token')){
+      //set auth token header auth
+  setAuthToken(localStorage.token);
+  //decode jwt
+  const decoded = jwt_decode(localStorage.token);
+
+  //set isAuthenticated
+  loginAuth()
+
+  //Check for expired token
+  const currentTime = Date.now() / 1000;
+  if (decoded.exp < currentTime) {
+    //logOut
+    logoutAuth
+    localStorage.clear('token');
+
+    //Redirect to login
+    window.location.href = "/login";
+  }
+  }
   return (
     <QueryClientProvider client={queryClient}>
       <Router>

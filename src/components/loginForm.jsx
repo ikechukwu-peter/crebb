@@ -10,7 +10,7 @@ import { login } from '../servers/auth';
 
 function LoginForm() {
     const isAuthenticated = useStore(state => state.isAuthenticated)
-    console.log(isAuthenticated)
+
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const history = useHistory()
@@ -20,13 +20,8 @@ function LoginForm() {
 
 
     //Making sure a user already logged in is not able to access the login page
-    if(isAuthenticated){
-        history.push("/");
-    }
-    useLayoutEffect(() => {
+    useEffect(() => {
         if (isAuthenticated) {
-
-            console.log('I was called')
             history.push("/");
         }
         // eslint - disable - next - line;

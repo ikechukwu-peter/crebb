@@ -33,7 +33,7 @@ function Navbar() {
             <NavLink exact to="/book-a-session" activeStyle={activeStyle}>Book</NavLink>
 
         </li>
-        <li onClick={toggler}>   <NavLink exact to="/login" activeStyle={activeStyle}>Log Out</NavLink>
+        <li onClick={toggler}>   <NavLink exact to="/" activeStyle={activeStyle}>Log Out</NavLink>
 
         </li>
     </ul>)
