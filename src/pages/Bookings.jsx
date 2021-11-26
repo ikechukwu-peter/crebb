@@ -4,9 +4,12 @@ import Modal from './Modal';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import Spinner from '../common/Spinner'
+import useStore from '../store';
 import '../styles/bookings.css';
 
 function Bookings() {
+    const isAuthenticated = useStore(state => state.isAuthenticated)
+    console.log(isAuthenticated)
     const [show, setShow] = useState(false);
     const [loading, setLoading] = useState(false);
     const [items, setItems] = useState(null)

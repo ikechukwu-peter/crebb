@@ -1,89 +1,58 @@
-import React, { useState } from 'react';
-import FacebookLogin from 'react-facebook-login';
-import { NavLink } from "react-router-dom";
-import { FaFacebook } from 'react-icons/fa'
+import React, { useEffect, useState } from 'react';
+import {useHistory} from 'react-router-dom'
+import useStore from '../store';
 import Navbar from './Navbar';
 import Footer from './Footer';
-import styles from '../styles/style.module.css'
-import '../styles/form.css'
+import SignupForm from '../components/signupForm';
+import { useMutation } from 'react-query';
+import { signup } from '../servers/auth';
 
 
 function SignUp() {
+    const isAuthenticated = useStore(state => state.isAuthenticated)
     const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    const [error, setError] = useState("");
+    const [username, setUsername] = useState("");
+    const mutation = useMutation(signup);
+    const history = useHistory()
+
+      //Making sure a user already logged in is not able to access the login page
+      useEffect(() => {
+        if (isAuthenticated) {
+            history.push("/");
+        }
+        // eslint - disable - next - line;
+    }, []);
+
+    useEffect(() => {
+        if (mutation.data) {
+             history.push('/login')
+        }
+    }, [mutation.data])
 
     const handleSignup = async (e) => {
         e.preventDefault()
         const newUser = {
             email,
-            password
+            username
         }
         console.table(newUser)
+        mutation.mutate(newUser)
+
     }
 
     const responseFacebook = (response) => {
         console.log(response);
     }
-
-
-    const activeStyle = { color: '#009688' };
     return (
-        <div>
+        <>
             <Navbar />
-            <div className="form_head">
-                <div className="form_subhead">
-                    <form className="main_form" onSubmit={handleSignup}>
-                        <h2 className="intro_text"> Join 😎Crebb today and get support for free.</h2>
-                        {error ? (
-                            <div
-                                className={styles.error}
-                            >
-                                {error}
-                            </div>
-                        ) : null}
-                        <label className="input_label" htmlFor="email">Email </label>
-                        <input className="_input" type="email" id="email" placeholder="Enter your email"
-                            value={email}
-                            onChange={(e) => setEmail(e.target.value)}
-                            required
-                        />
-
-                        <div className="btn-container">
-                            <button className="btn" type="submit" >
-                                Sign Up
-                            </button>
-                        </div>
-                        <div style={{textAlign: 'center', color: '#fff'}}>
-                        <strong>
-                            Or
-                        </strong>
-                        </div>
-                      
-
-                        <FacebookLogin
-                            appId="3774838975977263"
-                            autoLoad={true}
-                            fields="name,email"
-                            callback={responseFacebook}
-                            cssClass="_input fblogin"
-                            icon={<FaFacebook className="fb-icon" />}
-                            textButton="&nbsp;&nbsp;Sign Up with Facebook"
-                        />
-                        <p className="forgotten">Already has an account?
-                            <NavLink exact to="/login" activeStyle={activeStyle}> Login</NavLink>
-                        </p>
-
-                    </form>
-
-                </div>
-                <Footer />
-
-            </div>
-        </div>
+            <SignupForm email={email} setEmail={setEmail} username={username}
+                setUsername={setUsername} mutation={mutation}
+                handleSignup={handleSignup} responseFacebook={responseFacebook} />
+            <Footer />
+        </>
 
     )
-
 }
 
 export default SignUp
