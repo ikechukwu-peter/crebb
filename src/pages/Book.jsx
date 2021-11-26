@@ -11,15 +11,8 @@ function Book() {
     const [body, setBody] = useState("")
 
     const mutation = useMutation(book)
-    useEffect(() => {
-        if (mutation.data) {
-            console.log(mutation.data)
-        }
-    }, [mutation.data])
-
     const handleBooking = async (e) => {
         e.preventDefault();
-        console.log(" I ran")
         let date = datetime.split('T')[0]
         let time = datetime.split('T')[1]
         const newBooking = {

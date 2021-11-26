@@ -35,7 +35,7 @@ function BookForm({ mutation, handleBooking, title,setTitle, setBody, setDatetim
                         />
                         <div className="btn-container">
                             <button disabled={!title || !datetime || !body || mutation.isLoading} className="btn" type="submit" >
-                               {mutation.isLoading?'Loading': ' Book'}
+                               {mutation.isLoading?'Loading...': ' Book'}
                             </button>
                         </div>
                     </form>
