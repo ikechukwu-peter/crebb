@@ -7,11 +7,17 @@ import useStore from '../store';
 
 function Navbar() {
     const [toggle, setToggle] = useState("false")
-    const isAuthenticated = useStore(state=> state.isAuthenticated)
+    const isAuthenticated = useStore(state => state.isAuthenticated)
 
     const toggler = () => {
         setToggle(!toggle);
     };
+
+    const logOut = () => {
+        useStore.setState({ isAuthenticated: false });
+        localStorage.removeItem('token');
+        setToggle(!toggle);
+    }
 
     const activeStyle = { color: '#009688' };
 
@@ -33,7 +39,7 @@ function Navbar() {
             <NavLink exact to="/book-a-session" activeStyle={activeStyle}>Book</NavLink>
 
         </li>
-        <li onClick={toggler}>   <NavLink exact to="/" activeStyle={activeStyle}>Log Out</NavLink>
+        <li onClick={logOut}>   <NavLink exact to="/" activeStyle={activeStyle}>Log Out</NavLink>
 
         </li>
     </ul>)
