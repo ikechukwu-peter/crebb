@@ -33,7 +33,7 @@ function SignUp() {
         e.preventDefault()
         const newUser = {
             email,
-            username
+            username,
         }
         console.table(newUser)
         mutation.mutate(newUser)

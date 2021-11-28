@@ -10,20 +10,12 @@ function Book() {
     const [datetime, setDatetime] = useState("");
     const [body, setBody] = useState("")
 
-    const mutation = useMutation(book)
-    useEffect(() => {
-        if (mutation.data) {
-            console.log(mutation.data)
-        }
-    }, [mutation.data])
+    const mutation = useMutation(book);
 
     const handleBooking = async (e) => {
         e.preventDefault();
-        console.log(" I ran")
-        let date = datetime.split('T')[0]
-        let time = datetime.split('T')[1]
-        const newBooking = {
-            title, body, date, time
+          const newBooking = {
+            title, body, datetime
         }
         console.table(newBooking)
         setTitle("")

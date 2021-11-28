@@ -2,10 +2,10 @@ import React from 'react'
 import styles from '../styles/style.module.css'
 import '../styles/home.css';
 
-function BookForm({ mutation, handleBooking, title,setTitle, setBody, setDatetime, datetime, body}) {
+function BookForm({ mutation, handleBooking, title, setTitle, setBody, setDatetime, datetime, body }) {
     return (
         <>
-             <div className="form_head">
+            <div className="form_head">
                 <div className="form_subhead">
                     <h2 className="intro_text">Book for a Session </h2>
                     {mutation.error ? (
@@ -21,7 +21,7 @@ function BookForm({ mutation, handleBooking, title,setTitle, setBody, setDatetim
                             value={title}
                             onChange={(e) => setTitle(e.target.value)}
                             required
-                           />
+                        />
                         <label className="input_label" htmlFor="date">Date and Time</label>
                         <input className="_input" type="datetime-local" id="date" name="date"
                             value={datetime}
@@ -34,8 +34,8 @@ function BookForm({ mutation, handleBooking, title,setTitle, setBody, setDatetim
                             required
                         />
                         <div className="btn-container">
-                            <button disabled={!title || !datetime || !body || mutation.isLoading} className="btn" type="submit" >
-                               {mutation.isLoading?'Loading': ' Book'}
+                            <button disabled={!title || !date || !body || mutation.isLoading} className="btn" type="submit" >
+                                {mutation.isLoading ? 'Loading...' : 'Book'}
                             </button>
                         </div>
                     </form>

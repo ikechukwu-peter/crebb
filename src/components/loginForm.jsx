@@ -41,7 +41,6 @@ function LoginForm() {
 
     const handleLogin = async (e) => {
         e.preventDefault();
-        console.log("I ran")
 
         const user = {
             email, password

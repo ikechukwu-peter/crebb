@@ -1,10 +1,11 @@
 import React from 'react'
+import { NavLink } from "react-router-dom";
 import Navbar  from './Navbar';
 import Footer from './Footer';
-
 import  '../styles/home.css';
 
 function Home() {
+   const activeStyle = { color: '#009688' };
    return (
         <div>
             <Navbar />
@@ -14,10 +15,13 @@ function Home() {
                   No one remained the same after they did!!!
                </p>
                <div>
-               <button className="cta">
+               <NavLink exact to="/book-a-session" activeStyle={activeStyle}>                  
+               <button className="cta" >
                       <span></span>
                   BOOK NOW
-              </button>               
+              </button>  
+               </NavLink>
+             
              </div>
 
            

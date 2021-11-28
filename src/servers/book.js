@@ -3,13 +3,11 @@ import { baseURL } from "./baseURl";
 export const book = async (values) => {
 
     let token = localStorage.token
-    
+
     try {
-        let { data } = await axios.post(baseURL+'session/create', values, {headers: {'Authorization': `Bearer ${token}`}})
+        let { data } = await axios.post(baseURL + 'session/create', values, { headers: { 'Authorization': `Bearer ${token}` } })
         return data
     } catch (err) {
-        console.log(err)
-        throw new Error(err.response ? err.response.data.err: "Please check your internet connection");
+        throw new Error(err.response ? err.response.data.err : "Please check your internet connection");
     }
-
 }
