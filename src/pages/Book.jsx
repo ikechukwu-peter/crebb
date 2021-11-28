@@ -7,16 +7,14 @@ import { book } from '../servers/book'
 
 function Book() {
     const [title, setTitle] = useState("");
-    const [datetime, setDatetime] = useState("");
+    const [date, setDate] = useState("");
     const [body, setBody] = useState("")
 
     const mutation = useMutation(book)
     const handleBooking = async (e) => {
         e.preventDefault();
-        let date = datetime.split('T')[0]
-        let time = datetime.split('T')[1]
-        const newBooking = {
-            title, body, date, time
+          const newBooking = {
+            title, body, date
         }
         console.table(newBooking)
         setTitle("")
@@ -30,7 +28,7 @@ function Book() {
             <Navbar />
             <BookForm mutation={mutation} handleBooking={handleBooking}
                 title={title} setTitle={setTitle}
-                datetime={datetime} setDatetime={setDatetime}
+                date={date} setDate={setDate}
                 body={body} setBody={setBody} />
             <Footer />
         </div>
