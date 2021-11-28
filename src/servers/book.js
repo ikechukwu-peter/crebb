@@ -8,6 +8,6 @@ export const book = async (values) => {
         let { data } = await axios.post(baseURL + 'session/create', values, { headers: { 'Authorization': `Bearer ${token}` } })
         return data
     } catch (err) {
-        throw new Error(err.response ? err.response.data : "Please check your internet connection");
+        throw new Error(err.response ? err.response.data.err : "Please check your internet connection");
     }
 }

@@ -34,7 +34,6 @@ function SignUp() {
         const newUser = {
             email,
             username,
-            role: 'admin'
         }
         console.table(newUser)
         mutation.mutate(newUser)

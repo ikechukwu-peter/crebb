@@ -8,9 +8,8 @@ export const bookings = async () => {
         let { data } = await axios.get(baseURL+'session/get-all-sessions', {headers: {'Authorization': `Bearer ${token}`}})
         return data
     } catch (err) {
-       console.log(err.response)
-       console.log(err.response.error)
-        throw new Error(err.response ? err.response.data: "Please check your internet connection");
+          console.log(err.response.data.err)
+        throw new Error(err.response ? err.response.data.err: "Please check your internet connection");
     
     }
 
