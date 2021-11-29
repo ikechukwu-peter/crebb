@@ -7,7 +7,6 @@ import '../styles/bookings.css';
 
 function BookingsForm({ handleCancel, handleDelete, hideModal,
     showModal, show, items, sessionData, error, isLoading }) {
-    console.log(sessionData)
     return (
         <>
             <h1 className="booking-head">Bookings</h1>
@@ -21,9 +20,9 @@ function BookingsForm({ handleCancel, handleDelete, hideModal,
                         </div>
                     ) : null}
                     {
-                        sessionData.results.length < 1 ? <>
-                            <h2 className="no-booking">You have no session booked! 🤷‍♂️</h2>
-                        </> : sessionData.data.doc.map(session => {
+                        sessionData.data.doc.length < 1  ?
+                         <>   <h2 className="no-booking">You have no session booked! 🤷‍♂️</h2> </>
+                         : sessionData.data.doc.map(session => {
                             return <div className="card-body" key={session._id}>
                                 < Modal show={show} handleClose={hideModal} session={items} />
                                 <h2 className="booking-title" onClick={() => showModal(session)}>{session.title}</h2>
