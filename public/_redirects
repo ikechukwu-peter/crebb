@@ -1,8 +1,6 @@
-/* /index.html 200
-/          
-/contact-us
-/see-all-sessions
-/book-a-session          
-/blog
-/login https://crebb.netlify.app/login
-/register
+/   https://crebb.netlify.app/       
+/contact-us     https://crebb.netlify.app/contact-us
+/see-all-sessions  https://crebb.netlify.app/see-all-sessions
+/book-a-session    https://crebb.netlify.app/book-a-session       
+/login    https://crebb.netlify.app/login
+/register     https://crebb.netlify.app/register
