@@ -1,12 +1,17 @@
 import React, { useEffect, useState } from 'react'
-import { useQuery } from 'react-query'
+import { useQuery, useQueryClient } from 'react-query'
+import axios from 'axios'
+import cogoToast from 'cogo-toast';
 import BookingsForm from '../components/bookingsForm';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import { bookings } from '../servers/bookings'
+import { deleteReq } from '../servers/delete'
+import { baseURL } from '../servers/baseURl'
 
 
 function Bookings() {
+
     const [show, setShow] = useState(false);
     const [items, setItems] = useState(null)
     let { data, error, isLoading } = useQuery('session', bookings);
@@ -33,12 +38,26 @@ function Bookings() {
 
     const handleDelete = (e, id) => {
         e.preventDefault();
-          const response = confirm('Are you sure you want to delete?');
+        const response = confirm('Are you sure you want to delete?');
         if (response) {
-            let deletedObj = data.data.doc.filter(session => session._id !== id);
-            data = deletedObj;
-            console.log(data)
-           console.log(deletedObj)
+            data.data.doc.filter(session => {
+                let token = localStorage.token
+                axios.delete(baseURL + 'session/delete/' + session._id,
+                    { headers: { 'Authorization': `Bearer ${token}` } }).then(result => {
+                        if (result.status === 204) {
+                            const { hide, hideAfter } = cogoToast.success('Deleted successfully', {
+                                onClick: () => {
+                                    hide();
+                                },
+                                hideAfter: 5
+                            });
+                        }
+
+                    }).catch(err => {
+                        throw new Error(err.response ? err.response.data.err : "Please check your internet connection");
+                    })
+            }
+            )
         }
 
     }
