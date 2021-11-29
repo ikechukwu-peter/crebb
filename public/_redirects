@@ -4,5 +4,5 @@
 /see-all-sessions
 /book-a-session          
 /blog
-/login
+/login https://crebb.netlify.app/login
 /register
