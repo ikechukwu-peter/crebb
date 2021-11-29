@@ -1,15 +1,20 @@
 import React, { useEffect, useState } from 'react'
-import { useQuery } from 'react-query'
+import { useQuery, useQueryClient } from 'react-query'
+import axios from 'axios'
+import cogoToast from 'cogo-toast';
 import BookingsForm from '../components/bookingsForm';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import { bookings } from '../servers/bookings'
+import { deleteReq } from '../servers/delete'
+import { baseURL } from '../servers/baseURl'
 
 
 function Bookings() {
+
     const [show, setShow] = useState(false);
     const [items, setItems] = useState(null)
-    const { data, error, isLoading } = useQuery('session', bookings);
+    let { data, error, isLoading } = useQuery('session', bookings);
 
     const showModal = (value) => {
         setItems(value);
@@ -20,11 +25,12 @@ function Bookings() {
         setShow(false)
     }
 
+
     const handleCancel = (e, id) => {
         e.preventDefault();
         const response = confirm('Are you sure you want to cancel?')
         if (response) {
-            let data = sessionData.filter(session => session._id === id);
+            let canceled = data.filter(session => session._id === id);
             console.log(e.target)
 
         }
@@ -34,9 +40,24 @@ function Bookings() {
         e.preventDefault();
         const response = confirm('Are you sure you want to delete?');
         if (response) {
-            let data = sessionData.filter(session => session._id !== id);
-            console.log(data)
-            data ? setSessionData(data) : setSessionData(null);
+            data.data.doc.filter(session => {
+                let token = localStorage.token
+                axios.delete(baseURL + 'session/delete/' + session._id,
+                    { headers: { 'Authorization': `Bearer ${token}` } }).then(result => {
+                        if (result.status === 204) {
+                            const { hide, hideAfter } = cogoToast.success('Deleted successfully', {
+                                onClick: () => {
+                                    hide();
+                                },
+                                hideAfter: 5
+                            });
+                        }
+
+                    }).catch(err => {
+                        throw new Error(err.response ? err.response.data.err : "Please check your internet connection");
+                    })
+            }
+            )
         }
 
     }

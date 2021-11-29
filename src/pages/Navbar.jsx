@@ -39,7 +39,7 @@ function Navbar() {
             <NavLink exact to="/book-a-session" activeStyle={activeStyle}>Book</NavLink>
 
         </li>
-        <li onClick={logOut}>   <NavLink exact to="/" activeStyle={activeStyle}>Log Out</NavLink>
+        <li onClick={logOut}>   <NavLink exact to="/">Log Out</NavLink>
 
         </li>
     </ul>)
@@ -68,7 +68,7 @@ function Navbar() {
         <>
             <div className="menu-bar " onClick={toggler}><FaAlignCenter /></div>
             <div className="navbar">
-                <NavLink exact to="/" activeStyle={activeStyle}>
+                <NavLink className="logo_holder" exact to="/" activeStyle={activeStyle}>
                     <img className="logo" src={logo} alt="Crebb logo" title="Crebb logo" />
                 </NavLink>
                 {isAuthenticated ? authLinks : guestLinks}

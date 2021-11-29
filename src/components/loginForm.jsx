@@ -1,59 +1,12 @@
-import React, { useState, useEffect, useLayoutEffect } from 'react'
+import React from 'react'
 import FacebookLogin from 'react-facebook-login';
-import { NavLink, useHistory } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { FaFacebook } from 'react-icons/fa';
+
 import styles from '../styles/style.module.css'
 import '../styles/form.css'
-import { useMutation } from 'react-query';
-import useStore from '../store';
-import { login } from '../servers/auth';
 
-function LoginForm() {
-    const isAuthenticated = useStore(state => state.isAuthenticated)
-
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    const history = useHistory()
-    const loginAuth = useStore(state => state.login);
-    const mutation = useMutation(login);
-    const [error, setError] = useState("");
-
-
-    //Making sure a user already logged in is not able to access the login page
-    useEffect(() => {
-        if (isAuthenticated) {
-            history.push("/");
-        }
-        // eslint - disable - next - line;
-    }, []);
-
-    // const {data, error, isLoading} = useQuery('loginData', login)
-    useEffect(() => {
-        if (mutation.data) {
-            console.log(mutation.data)
-            loginAuth()
-            localStorage.setItem('token', mutation.data.userData.token)
-            history.push('/')
-
-        }
-
-    }, [mutation.data])
-
-    const handleLogin = async (e) => {
-        e.preventDefault();
-
-        const user = {
-            email, password
-        }
-        console.table(user)
-        mutation.mutate(user)
-
-
-    }
-
-    const responseFacebook = (response) => {
-        console.log(response.email);
-    }
+function LoginForm({ handleLogin, error, mutation, password, setPassword, email, setEmail, responseFacebook }) {
 
     const activeStyle = { color: '#009688' };
     return (
