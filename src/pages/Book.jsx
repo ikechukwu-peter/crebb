@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import cogoToast from 'cogo-toast';
+import { useHistory } from 'react-router-dom'
 import Navbar from './Navbar';
 import Footer from './Footer';
 import BookForm from '../components/bookForm';
@@ -9,18 +11,34 @@ function Book() {
     const [title, setTitle] = useState("");
     const [datetime, setDatetime] = useState("");
     const [body, setBody] = useState("")
+    const history = useHistory();
 
     const mutation = useMutation(book);
 
+    useEffect(() => {
+        if (mutation.data) {
+            setTitle("")
+            setDatetime("")
+            setBody("")
+
+            const { hide, hideAfter } = cogoToast.success('Session booked successfully.\nYou will be redirected to see all your bookings', {
+                onClick: () => {
+                    hide();
+                },
+                hideAfter: 5
+            });
+
+            setTimeout(() => {
+                history.push('/see-all-sessions')
+            }, 5000)
+        }
+    }, [mutation.data])
+
     const handleBooking = async (e) => {
         e.preventDefault();
-          const newBooking = {
+        const newBooking = {
             title, body, datetime
         }
-        console.table(newBooking)
-        setTitle("")
-        setDatetime("")
-        setBody("")
         mutation.mutate(newBooking)
     }
 
@@ -33,8 +51,6 @@ function Book() {
                 body={body} setBody={setBody} />
             <Footer />
         </div>
-
-
     )
 
 }

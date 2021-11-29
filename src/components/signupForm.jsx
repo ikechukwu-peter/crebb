@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import FacebookLogin from 'react-facebook-login';
 import { NavLink } from "react-router-dom";
 import { FaFacebook } from 'react-icons/fa'
@@ -7,7 +7,7 @@ import '../styles/form.css'
 
 function SignupForm({ email, setEmail, username, setUsername, mutation, handleSignup, responseFacebook }) {
     const activeStyle = { color: '#009688' };
-
+    
     return (
         <>
             <div className="form_head">

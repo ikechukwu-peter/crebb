@@ -9,7 +9,7 @@ import { bookings } from '../servers/bookings'
 function Bookings() {
     const [show, setShow] = useState(false);
     const [items, setItems] = useState(null)
-    const { data, error, isLoading } = useQuery('session', bookings);
+    let { data, error, isLoading } = useQuery('session', bookings);
 
     const showModal = (value) => {
         setItems(value);
@@ -20,11 +20,12 @@ function Bookings() {
         setShow(false)
     }
 
+
     const handleCancel = (e, id) => {
         e.preventDefault();
         const response = confirm('Are you sure you want to cancel?')
         if (response) {
-            let data = sessionData.filter(session => session._id === id);
+            let canceled = data.filter(session => session._id === id);
             console.log(e.target)
 
         }
@@ -32,11 +33,12 @@ function Bookings() {
 
     const handleDelete = (e, id) => {
         e.preventDefault();
-        const response = confirm('Are you sure you want to delete?');
+          const response = confirm('Are you sure you want to delete?');
         if (response) {
-            let data = sessionData.filter(session => session._id !== id);
+            let deletedObj = data.data.doc.filter(session => session._id !== id);
+            data = deletedObj;
             console.log(data)
-            data ? setSessionData(data) : setSessionData(null);
+           console.log(deletedObj)
         }
 
     }
